@@ -1,0 +1,14 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="AI Writing Assistant" icon="" />
+    
+    <GridLayout>
+        <StackLayout class="p-4">
+            <Label text="Welcome to AI Writing Assistant" class="text-2xl text-center mb-4" />
+            <Label text="Tap the floating AI button to start writing" class="text-lg text-center text-gray-600" textWrap="true" />
+        </StackLayout>
+        
+        <ContentView loaded="onFloatingButtonLoaded">
+            <!-- Floating button will be loaded here -->
+        </ContentView>
+    </GridLayout>
+</Page>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns="http://schemas.nativescript.org/tns.xsd">
+    <Button text="AI" tap="{{ togglePopup }}" class="bg-blue-500 text-white rounded-full w-12 h-12" top="{{screenHeight - 100}}" left="{{screenWidth - 60}}" />
+    
+    <GridLayout rows="auto" columns="*" visibility="{{ isPopupVisible ? 'visible' : 'collapsed' }}" 
+                class="bg-white rounded-lg p-4 shadow-lg w-4/5" top="{{screenHeight - 300}}" left="{{screenWidth * 0.1}}">
+        <StackLayout>
+            <TextField hint="Enter your prompt..." text="{{ prompt }}" returnPress="{{ generateText }}" class="border-b border-gray-300 p-2" />
+            <GridLayout rows="auto" columns="*, auto" class="mt-4" visibility="{{ generatedText ? 'visible' : 'collapsed' }}">
+                <Label text="{{ generatedText }}" textWrap="true" row="0" col="0" class="text-sm" />
+                <Button text="📋" tap="{{ copyToClipboard }}" row="0" col="1" class="w-8 h-8" />
+            </GridLayout>
+        </StackLayout>
+    </GridLayout>
+</AbsoluteLayout>
